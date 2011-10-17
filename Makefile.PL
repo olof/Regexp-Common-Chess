@@ -13,6 +13,7 @@ WriteMakefile (
 
 	PREREQ_PM => {
 		'Test::More' => 0,
+		'Regexp::Common' => 0,
 	},
 );
 
