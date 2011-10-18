@@ -61,6 +61,10 @@ Guide", available here:
 
 =back
 
+The L<Regexp::Common> manual documents the use of the
+Regexp::Common framework and interface, used by
+Regexp::Common::Chess.
+
 =head1 AVAILABILITY
 
 The latest released code of this module is available from CPAN.

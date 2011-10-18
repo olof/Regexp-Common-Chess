@@ -24,6 +24,9 @@ SEE ALSO
 
     *   <http://www.chessclub.com/help/PGN-spec>
 
+    The Regexp::Common manual documents the use of the Regexp::Common
+    framework and interface, used by Regexp::Common::Chess.
+
 AVAILABILITY
     The latest released code of this module is available from CPAN.
 
