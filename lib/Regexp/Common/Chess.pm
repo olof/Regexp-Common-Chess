@@ -11,7 +11,7 @@ my $rank      = '[1-8]';
 my $file      = '[a-h]';
 my $piece     = '[KNBQR]';
 
-my $promotion = "x?${file}8=(?!K)$piece";
+my $promotion = "x?${file}[18]=(?!K)$piece";
 my $stdmove   = "$piece?${file}?${rank}?x?$file$rank";
 my $castling  = "O-O(?:-O)?";
 
