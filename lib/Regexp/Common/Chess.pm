@@ -56,9 +56,7 @@ Guide", available here:
 
 =head1 AVAILABILITY
 
-The latest released code of this module is available from CPAN
-(NO! That's not true! Lies! (Hope I don't publish with this
-parenthesis :-))).
+The latest released code of this module is available from CPAN.
 
 The latest development, useful for contributing and for those
 living on the edge etc. is available from Github:
