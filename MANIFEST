@@ -1,5 +1,7 @@
 lib/Regexp/Common/Chess.pm
 Makefile.PL
 MANIFEST			This list of files
+README
+README.release
 t/01-san.t
 t/02-real_games.t
