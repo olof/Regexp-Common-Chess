@@ -13,7 +13,7 @@ sub gen_variants {
 
 	my %ret;
 
-	$ret{$base} = $msg;
+	$ret{$base} = $msg unless $opts->{onlycapture};
 
 	if(! $opts->{nocapture}) {
 		my $capture = $base;
@@ -22,8 +22,11 @@ sub gen_variants {
 		$ret{"$capture+"} = "$msg (capture+check)";
 		$ret{"$capture#"} = "$msg (capture+checkmate)";
 	}
-	$ret{"$base+"} = "$msg (check)";
-	$ret{"$base#"} = "$msg (checkmate)";
+
+	if(! $opts->{onlycapture}) {
+		$ret{"$base+"} = "$msg (check)";
+		$ret{"$base#"} = "$msg (checkmate)";
+	}
 
 	return %ret;
 }
@@ -35,7 +38,6 @@ my %good = (
 	gen_variants('Ka1', 'King moves'),
 	gen_variants('Qh8', 'Queen moves'),
 	gen_variants('a6', 'Pawn moves'),
-	gen_variants('ba5', 'Pawn moves, file disambiguation'),
 	map({ gen_variants("a8=$_->[0]", "White pawn promotion to $_->[1]") }
 		([qw/Q queen/], [qw/N knight/], [qw/B bishop/], [qw/R rook/])),
 	map({ gen_variants("a1=$_->[0]", "Black pawn promotion to $_->[1]") }
@@ -43,9 +45,9 @@ my %good = (
 	gen_variants('O-O', 'Castling king side', {nocapture=>1}),
 	gen_variants('O-O-O', 'Castling queen side', {nocapture=>1}),
 	gen_variants('Bb2a3', 'Coordinate disambiguation, bishop'),
-	gen_variants('b2a3', 'Coordinate disambiguation, pawn'),
 	gen_variants('Nbb3', 'File disambiguation, knight'),
 	gen_variants('R5c3', 'File disambiguation, rook'),
+	gen_variants('ba3', 'File disambiguation, pawn', {onlycapture=>1}),
 	gen_variants('Rf8', 'Rook to f8 (no promotion)'),
 	gen_variants('Qd1', 'Queen to d1 (no promotion)'),
 );
