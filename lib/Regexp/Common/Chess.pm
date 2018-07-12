@@ -19,7 +19,7 @@ my $piece     = '[KNBQR]';
 
 my $promotion = "x?${file}[18]=(?!K)$piece";
 my $pawnmove  = "(?:$file?x)?$file(?![18])$rank";
-my $stdmove   = "$piece$file?$rank?x?$file$rank";
+my $stdmove   = "$piece(?:$file|$rank)?x?$file$rank";
 my $castling  = "O-O(?:-O)?";
 
 pattern name => ['Chess' => 'SAN'],
