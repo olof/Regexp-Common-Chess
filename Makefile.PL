@@ -3,6 +3,8 @@ use strict;
 use warnings;
 use ExtUtils::MakeMaker;
 
+my $github = 'https://github.com/olof/Regexp-Common-Chess';
+
 WriteMakefile (
 	NAME => 'Regexp::Common::Chess',
 	AUTHOR => 'Olof Johansson <olof@cpan.org>',
@@ -15,5 +17,11 @@ WriteMakefile (
 		'Test::More' => 0,
 		'Regexp::Common' => 0,
 	},
-);
 
+	META_MERGE => {
+		resources => {
+			bugtracker => "$github/issues",
+			repository => $github,
+		},
+	},
+);
