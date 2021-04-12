@@ -14,7 +14,6 @@ WriteMakefile (
 	SIGN => 1,
 
 	PREREQ_PM => {
-		'Test::More' => 0,
 		'Regexp::Common' => 0,
 	},
 
